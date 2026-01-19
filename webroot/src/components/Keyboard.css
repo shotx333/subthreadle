@@ -1,0 +1,51 @@
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.key {
+    height: 50px;
+    min-width: 30px;
+    flex: 1;
+    border-radius: 4px;
+    background-color: var(--key-bg);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.key.wide {
+    flex: 1.5;
+    font-size: 12px;
+}
+
+.key.correct {
+    background-color: var(--tile-correct);
+}
+
+.key.present {
+    background-color: var(--tile-present);
+}
+
+.key.absent {
+    background-color: var(--tile-absent);
+    opacity: 0.5;
+}
+
+.key:active {
+    transform: translateY(2px);
+}

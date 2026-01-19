@@ -1,0 +1,121 @@
+.game-board {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin: 20px 0;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.2s ease, transform 0.2s;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+        background: var(--glass-bg);
+        border-color: var(--glass-border);
+    }
+
+    50% {
+        transform: rotateX(90deg);
+        background: var(--glass-bg);
+        border-color: var(--glass-border);
+    }
+
+    51% {
+        background: var(--glass-bg);
+        border-color: transparent;
+    }
+
+    100% {
+        transform: rotateX(0);
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tile.current[data-val] {
+    animation: pop 0.1s ease-in-out;
+    border-color: var(--text-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.tile.correct,
+.tile.present,
+.tile.absent {
+    animation: flip 0.5s ease forwards;
+}
+
+/* Sequential delays */
+.tile:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.tile:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.tile:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.tile:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.tile:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.tile.correct {
+    background-color: var(--tile-correct);
+    border-color: var(--tile-correct);
+}
+
+.tile.present {
+    background-color: var(--tile-present);
+    border-color: var(--tile-present);
+}
+
+.tile.absent {
+    background-color: var(--tile-absent);
+    border-color: var(--tile-absent);
+}
+
+.tile.current {
+    border-color: var(--text-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}

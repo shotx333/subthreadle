@@ -1,0 +1,22 @@
+{
+    "name": "subthreadle",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "dev": "devvit playtest",
+        "web-dev": "cd webroot && npm run dev",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "@devvit/public-api": "latest",
+        "@devvit/ui": "latest",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "typescript": "latest",
+        "vite": "^5.0.0",
+        "@vitejs/plugin-react": "^4.0.0"
+    },
+    "type": "module"
+}

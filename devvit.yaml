@@ -1,0 +1,4 @@
+name: subthreadle
+version: 0.0.1
+web_root: webroot
+main: src/main.tsx
